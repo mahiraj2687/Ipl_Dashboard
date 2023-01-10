@@ -1,0 +1,17 @@
+/* Write your CSS here */
+.ipl_heading {
+  color: white;
+}
+.bg_container {
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.team_cards_container {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
