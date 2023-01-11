@@ -2,6 +2,7 @@ import {Component} from 'react'
 import './index.css'
 import Loader from 'react-loader-spinner'
 import LatestMatch from '../LatestMatch'
+import RecentMatch from '../RecentMatch'
 
 class TeamMatches extends Component {
   state = {teamMatches: {}, isLoading: true}
@@ -31,11 +32,15 @@ class TeamMatches extends Component {
 
     const response = await fetch(`https://apis.ccbp.in/ipl/${id}`)
     const data = await response.json()
+    console.log(data)
     const updatedData = {
       teamBannerUrl: data.team_banner_url,
       latestMatchDetails: this.getUpdatedData(data.latest_match_details),
-      recentMatches: this.getUpdatedData(data.recent_matches),
+      recentMatches: data.recent_matches.map(eachMatch =>
+        this.getUpdatedData(eachMatch),
+      ),
     }
+    console.log(updatedData.recentMatches)
     this.setState({teamMatches: updatedData, isLoading: false})
   }
 
@@ -57,12 +62,19 @@ class TeamMatches extends Component {
           />
         </div>
         <div className="latest_match_details_container">
+          <h1 className="latest_match_heading">Latest Match</h1>
           <LatestMatch
             className="latest_match"
             key={teamMatches.latestMatchDetails.id}
             matchDetails={teamMatches.latestMatchDetails}
           />
         </div>
+        <h1 className="recent_match_heading">Recent Match Details</h1>
+        <ul className="recent_match_details_container">
+          {teamMatches.recentMatches.map(eachMatch => (
+            <RecentMatch recentMatchDetails={eachMatch} key={eachMatch.id} />
+          ))}
+        </ul>
       </div>
     )
   }
