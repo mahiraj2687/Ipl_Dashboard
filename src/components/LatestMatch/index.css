@@ -1,1 +1,17 @@
 /* Write your CSS here */
+.latest_match_container {
+  display: flex;
+  background-color: rgb(31, 33, 34);
+  border-radius: 20px;
+  justify-content: space-around;
+  border-style: solid;
+  border-color: white;
+  padding: 30px;
+}
+.logo_image {
+  height: 250px;
+  width: 250px;
+}
+.heading {
+  font-weight: bold;
+}

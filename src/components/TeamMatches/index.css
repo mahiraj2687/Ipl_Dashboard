@@ -1,4 +1,18 @@
 /* Write your CSS here */
 .heading {
-  color: black;
+  color: white;
+}
+.team_match_details_container {
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.Banner_image {
+  align-self: center;
+  margin: 10px;
+}
+.latest_match_details_container {
+  align-self: center;
+  width: 70%;
 }
