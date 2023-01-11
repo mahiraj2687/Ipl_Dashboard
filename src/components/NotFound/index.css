@@ -1,1 +1,13 @@
-/* Write your CSS here */
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  height: 100vh;
+}
+.not-found-text {
+  font-family: 'Bree Serif';
+  font-size: 40px;
+  color: #bdf0f1;
+}

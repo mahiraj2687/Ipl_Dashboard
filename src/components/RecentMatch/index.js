@@ -23,6 +23,7 @@ const RecentMatch = props => {
         <p className="detail">{umpires}</p>
         <h3 className="head">Man of The Match</h3>
         <p className="detail">{manOfTheMatch}</p>
+        <h1 className="result">{result}</h1>
       </div>
       <div className="image_container">
         <img

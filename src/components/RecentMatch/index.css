@@ -19,3 +19,7 @@
   flex-direction: column;
   justify-content: center;
 }
+.result {
+  color: yellow;
+  width: 70%;
+}
